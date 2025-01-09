@@ -18,14 +18,4 @@ void keyboard_post_init_user(void) {
     debug_enable = true;
     debug_matrix = true;
     print("Keyboard initialized!\n");
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-        uprintf("KL: row: %u, col: %u, layer: %u\n", 
-                record->event.key.row,
-                record->event.key.col,
-                get_highest_layer(layer_state));
-    }
-    return true;
 } 
